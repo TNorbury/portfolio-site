@@ -6,13 +6,17 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 
 import Intro from "../components/intro/intro"
+import Header from "../components/header/header"
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const IndexPage = () => (
   // <Intro></Intro>
 
   <Layout>
     <SEO title="Home" />
-    <Intro></Intro>
+    <Header />
+    <Intro/>
   </Layout>
 )
 
