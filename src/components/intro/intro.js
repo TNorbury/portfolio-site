@@ -23,7 +23,6 @@ const IntroWrapper = styled.div`
   justify-content: space-between;
 
   @media (max-width: 960px) {
-    align-items: center;
 
     flex-direction: column;
     margin-right: 2.5rem;

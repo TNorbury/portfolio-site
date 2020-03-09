@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import styled from "styled-components"
+import AnchorLink from "react-anchor-link-smooth-scroll"
 
 import {
   Collapse,
@@ -29,13 +30,19 @@ const Header = () => {
       <Collapse isOpen={isOpen} navbar>
         <Nav className="ml-auto" navbar>
           <NavItem>
-            <NavLink href="#about">About</NavLink>
+            <AnchorLink href="#about">
+              <NavLink>About</NavLink>
+            </AnchorLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#projects">Portfolio</NavLink>
+            <AnchorLink href="#projects">
+              <NavLink>Projects</NavLink>
+            </AnchorLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#contact">Contact</NavLink>
+            <AnchorLink href="#contact">
+              <NavLink>Contact</NavLink>
+            </AnchorLink>
           </NavItem>
         </Nav>
       </Collapse>
