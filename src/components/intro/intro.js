@@ -53,6 +53,7 @@ const StyledIntroText = styled.div`
   @media (max-width: 960px) {
     width: 100%;
     // margin-bottom: 2rem;
+    padding-top: 0.5%;
   }
 `
 

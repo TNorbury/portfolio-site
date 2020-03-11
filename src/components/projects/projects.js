@@ -1,10 +1,24 @@
 import React from "react"
-
+import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
 import ProjectCard from "./project_card"
-
 import background from "../../assets/images/backgrounds/projects_background.svg"
+
+// The header for this section will be right above where the projects background starts
+const ProjectsHeader = styled.h2`
+  margin-left: 5rem;
+  margin-right: 0.5rem;
+
+  @media (max-width: 960px) {
+    margin-right: 2.5rem;
+    margin-left: 2.5rem;
+
+    font-size: 20pt;
+  }
+
+  font-size: 23pt;
+`
 
 const BackgroundWrapper = styled.div`
   background-image: url(${background});
@@ -23,29 +37,47 @@ const ProjectsWrapper = styled.div`
   @media (max-width: 960px) {
     margin-right: 2.5rem;
     margin-left: 2.5rem;
-
-    h2 {
-      font-size: 20pt;
-    }
-  }
-
-  h2 {
-    font-size: 23pt;
   }
 `
 
 // Displays various projects that I've been working on. Takes in a collection of
 // nodes which represent markdown files that contain information about
-const Projects = ({ data: projects }) => {
+const Projects = () => {
+  // Gets our projects from graphql
+  const data = useStaticQuery(graphql`
+    query ProjectsQuery {
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/.projects./" } }
+      ) {
+        edges {
+          node {
+            html
+            frontmatter {
+              title
+              githubLink
+              projectLink
+              tech
+            }
+          }
+        }
+      }
+    }
+  `)
+  const projects = data.allMarkdownRemark.edges
+
   return (
-    <BackgroundWrapper>
-      <ProjectsWrapper id="projects">
-        <h2>Here are some things I've been working on!</h2>
-        {projects.map(({ node: project, index }) => {
-          return <ProjectCard data={project} index={index} />
-        })}
-      </ProjectsWrapper>
-    </BackgroundWrapper>
+    <div id="projects">
+      <ProjectsHeader>
+        Here are some things I've been working on!
+      </ProjectsHeader>
+      <BackgroundWrapper>
+        <ProjectsWrapper>
+          {projects.map(({ node: project }, index) => {
+            return <ProjectCard data={project} key={index} />
+          })}
+        </ProjectsWrapper>
+      </BackgroundWrapper>
+    </div>
   )
 }
 

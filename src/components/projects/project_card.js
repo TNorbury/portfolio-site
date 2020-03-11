@@ -114,14 +114,16 @@ const ProjectCard = ({ data: project }) => {
         <ProjectTitle href={project.frontmatter.projectLink}>
           {project.frontmatter.title}
         </ProjectTitle>
+
         <ProjectInfo
           dangerouslySetInnerHTML={{ __html: project.html }}
         ></ProjectInfo>
+
         <CardFooter>
           <TechList>
             {/* List of the tech that I used for this project */}
-            {project.frontmatter.tech.map(tech => (
-              <li>{tech}</li>
+            {project.frontmatter.tech.map((tech, i) => (
+              <li key={i}>{tech}</li>
             ))}
           </TechList>
 
