@@ -1,6 +1,6 @@
 import React from "react"
-import dev from "../../assets/images/dev.svg"
-import background from "../../assets/images/intro_background.svg"
+import dev from "../../assets/images/intro/dev.svg"
+import background from "../../assets/images/backgrounds/intro_background3.svg"
 import styled from "styled-components"
 
 const Wrapper = styled.div`
@@ -23,7 +23,6 @@ const IntroWrapper = styled.div`
   justify-content: space-between;
 
   @media (max-width: 960px) {
-
     flex-direction: column;
     margin-right: 2.5rem;
     margin-left: 2.5rem;
@@ -82,7 +81,7 @@ const Intro = () => (
         <h3>I'm Tyler, a software engineer based in Portland, OR!</h3>
       </StyledIntroText>
       <StyledImage>
-        <img src={dev} />
+        <img src={dev} alt="" />
       </StyledImage>
     </IntroWrapper>
   </Wrapper>
