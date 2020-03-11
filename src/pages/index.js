@@ -33,6 +33,9 @@ export const query = graphql`
           html
           frontmatter {
             title
+            githubLink
+            projectLink
+            tech
           }
         }
       }
