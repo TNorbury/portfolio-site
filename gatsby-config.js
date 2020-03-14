@@ -34,8 +34,18 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
 
       options: {
-        name: `projects`,
+        name: `about`,
         path: `${__dirname}/src/assets/markdown/about/`,
+      },
+    },
+
+    // Picture of myself for the about me section
+    {
+      resolve: `gatsby-source-filesystem`,
+
+      options: {
+        name: `my picture`,
+        path: `${__dirname}/src/assets/images/about/`,
       },
     },
     {
