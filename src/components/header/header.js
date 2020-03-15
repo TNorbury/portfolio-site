@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <Navbar color="white" light expand="md">
       <NavbarBrand>
-        <HeaderItem>Home</HeaderItem>
+        {/* <HeaderItem>Home</HeaderItem> */}
       </NavbarBrand>
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
