@@ -2,7 +2,7 @@ import React from "react"
 
 import styled from "styled-components"
 
-import githubIcon from "../../assets/icons/github/GitHub-Mark-120px-plus.png"
+import githubIcon from "../../../assets/icons/github/GitHub-Mark-120px-plus.png"
 
 const Wrapper = styled.div`
   display: flex;

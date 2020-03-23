@@ -1,6 +1,6 @@
 import React from "react"
-import dev from "../../assets/images/intro/dev.svg"
-import background from "../../assets/images/backgrounds/intro_background3.svg"
+import dev from "../../../assets/images/intro/dev.svg"
+import background from "../../../assets/images/backgrounds/intro_background3.svg"
 import styled from "styled-components"
 
 const Wrapper = styled.div`

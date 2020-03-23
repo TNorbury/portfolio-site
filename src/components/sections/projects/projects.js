@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
 import ProjectCard from "./project_card"
-import background from "../../assets/images/backgrounds/projects_background.svg"
+import background from "../../../assets/images/backgrounds/projects_background.svg"
 
 // The header for this section will be right above where the projects background starts
 const ProjectsHeader = styled.h2`
