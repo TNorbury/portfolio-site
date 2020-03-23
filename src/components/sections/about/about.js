@@ -50,10 +50,7 @@ const SkillsWrapper = styled.div`
 
   ul li {
     margin-left: 1rem;
-
   }
-
-
 `
 
 const SkillList = styled.ul`
@@ -62,7 +59,6 @@ const SkillList = styled.ul`
 
 const Skill = styled.li`
   font-size: 15pt;
-
 `
 
 const About = () => {
@@ -93,12 +89,6 @@ const About = () => {
 
   const aboutMD = query.allMarkdownRemark.edges[0].node
   const aboutImage = query.allImageSharp.edges[0].node
-
-  // console.log(aboutImage);
-
-  // console.log(data[0].node)
-
-  // dangerouslySetInnerHTML={{ __html: project.html }}
 
   return (
     <AboutWrapper id="about">
