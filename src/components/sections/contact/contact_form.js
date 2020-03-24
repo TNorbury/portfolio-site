@@ -57,7 +57,20 @@ const Error = styled.div`
   margin-bottom: 0.5rem;
 `
 
-const SubmitButton = styled.button``
+const SubmitButton = styled.button`
+  border: none;
+  border-radius: 7px;
+  padding: 10px;
+  background-color: #88a4cf;
+  color: white;
+
+  width: 45%;
+
+  @media (max-width: 960px) {
+    width: 100%;
+    padding: 12px;
+  }
+`
 
 const ContactForm = () => {
   return (
@@ -65,13 +78,6 @@ const ContactForm = () => {
       <ContactFormHeader>Or you can shoot me a message:</ContactFormHeader>
       <Formik
         initialValues={{ name: "", email: "" }}
-        // validate={values => {
-        //   const errors = {}
-        //   if (!values.name) {
-        //     errors.name = "Required"
-        //   }
-        //   return errors
-        // }}
         validationSchema={Yup.object({
           name: Yup.string().required("Required"),
           email: Yup.string()
@@ -88,51 +94,41 @@ const ContactForm = () => {
         {({ isSubmitting, touched, errors }) => (
           <Form>
             <FormWrapper>
-              <FormItem>
-                {/* <Field as="input" type="name" name="name" component={InputField} /> */}
-                <InputField
-                  as={Field}
-                  type="text"
-                  name="name"
-                  component="input"
-                  placeholder="Name"
-                  error={touched.name && errors.name}
-                />
-              </FormItem>
-              <FormItem>
-                <ErrorMessage name="name" component={Error} />
-              </FormItem>
+              {/* Name field */}
+              <InputField
+                as={Field}
+                type="text"
+                name="name"
+                component="input"
+                placeholder="Name"
+                error={touched.name && errors.name}
+              />
+              <ErrorMessage name="name" component={Error} />
 
-              <FormItem>
-                <InputField
-                  as={Field}
-                  type="text"
-                  name="email"
-                  component="input"
-                  placeholder="Email"
-                  error={touched.email && errors.email}
-                />
-              </FormItem>
-              <FormItem>
-                <ErrorMessage name="email" component={Error} />
-              </FormItem>
+              {/* Email field */}
+              <InputField
+                as={Field}
+                type="text"
+                name="email"
+                component="input"
+                placeholder="Email"
+                error={touched.email && errors.email}
+              />
+              <ErrorMessage name="email" component={Error} />
 
-              <FormItem>
-                <InputField
-                  as={Field}
-                  type="text"
-                  name="message"
-                  component="textarea"
-                  rows="4"
-                  placeholder="Message (optional)"
-                />
-              </FormItem>
+              {/* Message field */}
+              <InputField
+                as={Field}
+                type="text"
+                name="message"
+                component="textarea"
+                rows="4"
+                placeholder="Message (optional)"
+              />
 
-              <FormItem>
-                <SubmitButton type="submit" disabled={isSubmitting}>
-                  Submit
-                </SubmitButton>
-              </FormItem>
+              <SubmitButton type="submit" disabled={isSubmitting}>
+                Submit
+              </SubmitButton>
             </FormWrapper>
           </Form>
         )}
