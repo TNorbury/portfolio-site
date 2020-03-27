@@ -1,5 +1,6 @@
 {
     "cSpell.words": [
         "Formik"
-    ]
+    ],
+    "remote.WSL.fileWatcher.polling": true,
 }

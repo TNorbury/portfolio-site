@@ -1,7 +1,10 @@
 import React from "react"
 import styled from "styled-components"
-import { Formik, Form, Field, ErrorMessage, validateYupSchema } from "formik"
+import { Formik, Form, Field, ErrorMessage } from "formik"
+import Recaptcha from "react-google-recaptcha"
 import * as Yup from "yup"
+
+const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY
 
 const ContactFormWrapper = styled.div`
   width: 40%;
@@ -23,11 +26,6 @@ const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
 `
-
-const FormItem = styled.div`
-  // margin-top: 0.25rem;
-`
-
 const InputField = styled.div`
   width: 100%;
   box-sizing: border-box;
@@ -52,6 +50,11 @@ const InputField = styled.div`
   }
 `
 
+const RecaptchaField = styled.div`
+  margin-top: 0.25rem;
+  margin-bottom: 0.15rem;
+`
+
 const Error = styled.div`
   color: #ff4136;
   margin-bottom: 0.5rem;
@@ -72,27 +75,54 @@ const SubmitButton = styled.button`
   }
 `
 
+// Function for encode data to be send via POST request
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
+}
+
 const ContactForm = () => {
   return (
     <ContactFormWrapper>
       <ContactFormHeader>Or you can shoot me a message:</ContactFormHeader>
       <Formik
-        initialValues={{ name: "", email: "" }}
+        initialValues={{ name: "", email: "", message: "", recaptcha: "" }}
         validationSchema={Yup.object({
           name: Yup.string().required("Required"),
           email: Yup.string()
             .email("invalid email")
             .required("Required"),
+          recaptcha: Yup.string()
+            .required("You must complete the recaptcha!")
+            .nullable(),
         })}
         onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2))
-            setSubmitting(false)
-          }, 400)
+          // Send a post request to the server so the the form input can be saved
+          fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encode({
+              "form-name": "contact-form",
+              name: values.name,
+              email: values.email,
+              message: values.message,
+
+              // also include recaptcha result, so spam/robots will be filtered out
+              "g-recaptcha-response": values.recaptcha,
+            }),
+          })
+            .then(() => {
+              setSubmitting(false)
+              alert("Success")
+            })
+            .catch(error => {
+              alert(error)
+            })
         }}
       >
-        {({ isSubmitting, touched, errors }) => (
-          <Form>
+        {({ isSubmitting, touched, errors, setFieldValue }) => (
+          <Form data-netlify="true">
             <FormWrapper>
               {/* Name field */}
               <InputField
@@ -125,6 +155,17 @@ const ContactForm = () => {
                 rows="4"
                 placeholder="Message (optional)"
               />
+
+              {/* ReCaptcha field... no robots allowed :( */}
+              <RecaptchaField>
+                <Field
+                  component={Recaptcha}
+                  sitekey={RECAPTCHA_KEY}
+                  name="recaptcha"
+                  onChange={value => setFieldValue("recaptcha", value)}
+                />
+              </RecaptchaField>
+              <ErrorMessage name="recaptcha" component={Error} />
 
               <SubmitButton type="submit" disabled={isSubmitting}>
                 Submit

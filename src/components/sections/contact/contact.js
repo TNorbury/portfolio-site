@@ -3,7 +3,6 @@ import styled from "styled-components"
 
 import githubIcon from "../../../assets/icons/github/GitHub-Mark-120px-plus.png"
 import linkedinIcon from "../../../assets/images/contact/linkedin.png"
-import emailIcon from "../../../assets/images/contact/email.png"
 import ContactForm from "./contact_form"
 
 const ContactWrapper = styled.div`
