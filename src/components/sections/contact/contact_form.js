@@ -87,7 +87,12 @@ const ContactForm = () => {
     <ContactFormWrapper>
       <ContactFormHeader>Or you can shoot me a message:</ContactFormHeader>
       <Formik
-        initialValues={{ name: "", email: "", message: "", recaptcha: "" }}
+        initialValues={{
+          name: "",
+          email: "",
+          message: "",
+          recaptcha: ""
+        }}
         validationSchema={Yup.object({
           name: Yup.string().required("Required"),
           email: Yup.string()
@@ -122,7 +127,7 @@ const ContactForm = () => {
         }}
       >
         {({ isSubmitting, touched, errors, setFieldValue }) => (
-          <Form data-netlify="true">
+          <Form action="/" data-netlify="true" data-netlify-recaptcha="true">
             <FormWrapper>
               {/* Name field */}
               <InputField
