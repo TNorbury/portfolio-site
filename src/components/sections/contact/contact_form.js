@@ -127,7 +127,7 @@ const ContactForm = () => {
         }}
       >
         {({ isSubmitting, touched, errors, setFieldValue }) => (
-          <Form action="/" data-netlify="true" data-netlify-recaptcha="true">
+          <Form name="contact-form" action="/" data-netlify="true" data-netlify-recaptcha="true">
             <FormWrapper>
               {/* Name field */}
               <InputField
