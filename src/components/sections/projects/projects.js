@@ -13,6 +13,7 @@ const ProjectsHeader = styled.h2`
     margin-right: 2.5rem;
     margin-left: 2.5rem;
 
+    padding-top: 5rem;
     font-size: 20pt;
     text-shadow: 0px 0px 1px #FFFFFF;
   }

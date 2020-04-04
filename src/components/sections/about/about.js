@@ -62,7 +62,7 @@ const Skill = styled.li`
 `
 
 const About = () => {
-  // The about markdown file has the text that we'll put into the breif.
+  // The about markdown file has the text that we'll put into the brief.
   const query = useStaticQuery(graphql`
     query AboutQuery {
       allMarkdownRemark(
@@ -102,12 +102,14 @@ const About = () => {
         <h3>Skills</h3>
         <SkillList>
           <li>
-            Programming Languages
+                Languages
             <ul>
               <Skill>Dart</Skill>
               <Skill>Python</Skill>
               <Skill>JavaScript</Skill>
               <Skill>C++</Skill>
+                  <Skill>CSS</Skill>
+                  <Skill>HTML5</Skill>
             </ul>
           </li>
           <li>

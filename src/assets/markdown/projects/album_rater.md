@@ -4,7 +4,8 @@ projectLink: https://github.com/TNorbury/Album-Rater-2
 githubLink: https://github.com/TNorbury/Album-Rater-2
 tech:
   - Flutter
-  - SQL
+  - NoSQL
+  - Adobe XD
 ---
 
 An app for rating albums, built using Flutter!  

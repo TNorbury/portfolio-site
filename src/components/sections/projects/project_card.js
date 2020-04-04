@@ -14,15 +14,18 @@ const CardWrapper = styled.div`
   @media (max-width: 500px) {
     width: 100%;
     margin-left: 0rem;
+    margin-bottom: 2.5rem;
   }
 
   align-content: right;
 
-  margin-bottom: 5rem;
   margin-left: 2.5rem;
+  margin-bottom: 3rem;
 
   padding-bottom: 0.5rem;
-  padding-top: 0.5rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 
   -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
   -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
@@ -34,7 +37,6 @@ const CardWrapper = styled.div`
 const ProjectTitle = styled.a`
   font-size: 20pt;
   font-weight: bold;
-  margin-left: 0.5rem;
 
   color: black;
   line-height: 100%;
@@ -51,10 +53,7 @@ const ProjectTitle = styled.a`
 const ProjectInfo = styled.div`
   font-size: 15pt;
 
-  margin-left: 1rem;
-  margin-right: 1rem;
   padding-top: 0.5rem;
-  padding-bottom: 0.25rem;
 
   @media (max-width: 500px) {
     font-size: 13pt;
@@ -69,9 +68,6 @@ const ProjectInfo = styled.div`
 const CardFooter = styled.div`
   display: flex;
   justify-content: space-between;
-
-  margin-left: 1rem;
-  margin-right: 1rem;
 `
 
 const TechList = styled.ul`
@@ -79,13 +75,15 @@ const TechList = styled.ul`
   flex-wrap: wrap;
   list-style: none;
 
-  // margin-left: 1rem;
-  // margin-bottom
   li {
     align-self: flex-end;
     margin-right: 15px;
     line-height: 100%;
     font-size: 12pt;
+
+    @media (max-width: 960px) {
+      font-size: 11pt;
+    }
   }
 `
 

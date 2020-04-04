@@ -45,7 +45,6 @@ const ContactBody = styled.div`
     flex-direction: column;
     margin-right: 0rem;
     margin-left: 0rem;
-    text-shadow: 0px 0px 1px #ffffff;
   }
 `
 
