@@ -8,18 +8,28 @@ import ContactForm from "./contact_form"
 const ContactWrapper = styled.div`
   margin-left: 5rem;
   margin-right: 5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
 
   @media (max-width: 960px) {
     margin-right: 2.5rem;
     margin-left: 2.5rem;
+    margin-bottom: 2.5rem;
+
+    background-color: white;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
   }
 `
 
 const ContactHeader = styled.h2`
   font-size: 23pt;
-
+  color: black;
   @media (max-width: 960px) {
+    margin-bottom: 0.5rem;
     font-size: 20pt;
   }
 `
@@ -35,6 +45,7 @@ const ContactBody = styled.div`
     flex-direction: column;
     margin-right: 0rem;
     margin-left: 0rem;
+    text-shadow: 0px 0px 1px #ffffff;
   }
 `
 
@@ -49,10 +60,9 @@ const ContactInfo = styled.div`
 
   p {
     font-size: 15pt;
-    // width: 35%;
 
     @media (max-width: 960px) {
-      // width: 100%;
+      font-size: 13pt;
     }
   }
 `
@@ -100,6 +110,7 @@ const Contact = () => {
           </ContactList>
         </ContactInfo>
 
+        {/* All the stuff related to the contact me form in here: */}
         <ContactForm />
       </ContactBody>
     </ContactWrapper>

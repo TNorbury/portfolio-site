@@ -14,11 +14,13 @@ const ContactFormWrapper = styled.div`
   }
 `
 
-const ContactFormHeader = styled.h3`
-  font-size: 20pt;
-
+const ContactFormHeader = styled.div`
+  font-size: 16pt;
+  color: black;
+  font-weight: bold;
+  padding-bottom: 0.5rem;
   @media (max-width: 960px) {
-    font-size: 17pt;
+    font-size: 16pt;
   }
 `
 
@@ -29,7 +31,6 @@ const FormWrapper = styled.div`
 const InputField = styled.div`
   width: 100%;
   box-sizing: border-box;
-  // border: 2px solid #6c63ff;
   border: 1px solid;
   padding: 0.8rem 1rem;
   border-radius: 7px;
@@ -91,7 +92,7 @@ const ContactForm = () => {
           name: "",
           email: "",
           message: "",
-          recaptcha: ""
+          recaptcha: "",
         }}
         validationSchema={Yup.object({
           name: Yup.string().required("Required"),
@@ -127,7 +128,12 @@ const ContactForm = () => {
         }}
       >
         {({ isSubmitting, touched, errors, setFieldValue }) => (
-          <Form name="contact-form" action="/" data-netlify="true" data-netlify-recaptcha="true">
+          <Form
+            name="contact-form"
+            action="/"
+            data-netlify="true"
+            data-netlify-recaptcha="true"
+          >
             <FormWrapper>
               {/* Name field */}
               <InputField

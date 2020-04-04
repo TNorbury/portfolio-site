@@ -3,7 +3,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
 import ProjectCard from "./project_card"
-import background from "../../../assets/images/backgrounds/projects_background.svg"
 
 // The header for this section will be right above where the projects background starts
 const ProjectsHeader = styled.h2`
@@ -15,19 +14,10 @@ const ProjectsHeader = styled.h2`
     margin-left: 2.5rem;
 
     font-size: 20pt;
+    text-shadow: 0px 0px 1px #FFFFFF;
   }
 
   font-size: 23pt;
-`
-
-const BackgroundWrapper = styled.div`
-  background-image: url(${background});
-  // height: 50%;
-  background-size: cover;
-  // background-position: right bottom;
-  background-repeat: no-repeat;
-
-  // margin-bottom: 1rem;
 `
 
 const ProjectsWrapper = styled.div`
@@ -48,6 +38,7 @@ const Projects = () => {
     query ProjectsQuery {
       allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/.projects./" } }
+        sort: { fields: frontmatter___title }
       ) {
         edges {
           node {
@@ -70,13 +61,11 @@ const Projects = () => {
       <ProjectsHeader>
         Here are some things I've been working on!
       </ProjectsHeader>
-      <BackgroundWrapper>
         <ProjectsWrapper>
           {projects.map(({ node: project }, index) => {
             return <ProjectCard data={project} key={index} />
           })}
         </ProjectsWrapper>
-      </BackgroundWrapper>
     </div>
   )
 }
