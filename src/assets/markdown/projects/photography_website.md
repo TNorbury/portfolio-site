@@ -1,6 +1,6 @@
 ---
 title: Photography Website
-projectLink: https://www.tylernorbury.com/
+projectLink: https://photography.tylernorbury.com/
 githubLink: https://github.com/TNorbury/photography-website-gatsby
 tech:
   - GatsbyJs
