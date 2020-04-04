@@ -15,6 +15,8 @@ const AboutWrapper = styled.div`
     flex-direction: column;
     margin-right: 2.5rem;
     margin-left: 2.5rem;
+    padding-top: 5rem;
+    margin-top: 2.5rem;
   }
 
   justify-content: space-between;
@@ -91,46 +93,50 @@ const About = () => {
   const aboutImage = query.allImageSharp.edges[0].node
 
   return (
-    <AboutWrapper id="about">
-      <PictureWrapper>
-        <Img fluid={aboutImage.fluid}></Img>
-      </PictureWrapper>
-      <BriefWrapper
-        dangerouslySetInnerHTML={{ __html: aboutMD.html }}
-      ></BriefWrapper>
-      <SkillsWrapper>
-        <h3>Skills</h3>
-        <SkillList>
-          <li>
+    <>
+      <div id="about">
+        <AboutWrapper>
+          <PictureWrapper>
+            <Img fluid={aboutImage.fluid}></Img>
+          </PictureWrapper>
+          <BriefWrapper
+            dangerouslySetInnerHTML={{ __html: aboutMD.html }}
+          ></BriefWrapper>
+          <SkillsWrapper>
+            <h3>Skills</h3>
+            <SkillList>
+              <li>
                 Languages
-            <ul>
-              <Skill>Dart</Skill>
-              <Skill>Python</Skill>
-              <Skill>JavaScript</Skill>
-              <Skill>C++</Skill>
+                <ul>
+                  <Skill>Dart</Skill>
+                  <Skill>Python</Skill>
+                  <Skill>JavaScript</Skill>
+                  <Skill>C++</Skill>
                   <Skill>CSS</Skill>
                   <Skill>HTML5</Skill>
-            </ul>
-          </li>
-          <li>
-            Tools & Frameworks
-            <ul>
-              <Skill>Flutter</Skill>
-              <Skill>GatsbyJs</Skill>
-              <Skill>Node.js</Skill>
-              <Skill>QT</Skill>
-            </ul>
-          </li>
-          <li>
-            Misc.
-            <ul>
-              <Skill>UX</Skill>
-              {/* <Skill>Relati</Skill> */}
-            </ul>
-          </li>
-        </SkillList>
-      </SkillsWrapper>
-    </AboutWrapper>
+                </ul>
+              </li>
+              <li>
+                Tools & Frameworks
+                <ul>
+                  <Skill>Flutter</Skill>
+                  <Skill>GatsbyJs</Skill>
+                  <Skill>Node.js</Skill>
+                  <Skill>QT</Skill>
+                </ul>
+              </li>
+              <li>
+                Misc.
+                <ul>
+                  <Skill>UX</Skill>
+                  <Skill>Adobe Lightroom</Skill>
+                </ul>
+              </li>
+            </SkillList>
+          </SkillsWrapper>
+        </AboutWrapper>
+      </div>
+    </>
   )
 }
 

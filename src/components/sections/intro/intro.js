@@ -13,6 +13,7 @@ const Wrapper = styled.div`
 
   @media (max-width: 960px) {
     width: 100%;
+    padding-top: 5rem;
     // margin-bottom: 2rem;
   }
 `
@@ -70,7 +71,7 @@ const StyledImage = styled.div`
     // height: 90%
   }
   padding-left: 2rem;
-  margin-top: 20%;
+  margin-top: 18%;
   // padding: 1.5rem 1.0875rem 1.45rem;
 `
 
@@ -82,7 +83,7 @@ const Intro = () => (
         <h3>I'm Tyler, a software engineer based in Portland, OR!</h3>
       </StyledIntroText>
       <StyledImage>
-        <img src={dev} alt="" />
+        <img src={dev} alt="graphic of a guy sitting on a desk" />
       </StyledImage>
     </IntroWrapper>
   </Wrapper>
