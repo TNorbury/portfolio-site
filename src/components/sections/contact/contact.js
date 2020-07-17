@@ -59,6 +59,7 @@ const ContactInfo = styled.div`
 
   p {
     font-size: 15pt;
+    color: black;
 
     @media (max-width: 960px) {
       font-size: 13pt;
@@ -87,8 +88,10 @@ const Contact = () => {
       <ContactBody>
         <ContactInfo>
           <p>
-            I'm not currently looking for work, but if you want to reach out and
-            chat, here are some of the places that you can find me:
+            I'm currently open to both full-time and/or contract-based software.
+            If you have any opportunities for me, or if you just want to reach
+            out you can find me at the links below, or you an shoot me a
+            message!
           </p>
           <ContactList>
             <ContactItem>

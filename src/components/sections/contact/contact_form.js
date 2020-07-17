@@ -86,7 +86,7 @@ function encode(data) {
 const ContactForm = () => {
   return (
     <ContactFormWrapper>
-      <ContactFormHeader>Or you can shoot me a message:</ContactFormHeader>
+      {/* <ContactFormHeader>Or you can shoot me a message:</ContactFormHeader> */}
       <Formik
         initialValues={{
           name: "",
