@@ -10,6 +10,12 @@ const ContactWrapper = styled.div`
   margin-right: 5rem;
   margin-top: 1.5rem;
 
+  background-color: rgba(255, 255, 255, 0.5);
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 5px;
+
   @media (max-width: 960px) {
     margin-right: 2.5rem;
     margin-left: 2.5rem;
@@ -88,10 +94,10 @@ const Contact = () => {
       <ContactBody>
         <ContactInfo>
           <p>
-            I'm currently open to both full-time and/or contract-based software.
-            If you have any opportunities for me, or if you just want to reach
-            out you can find me at the links below, or you an shoot me a
-            message!
+            I'm currently open to both full-time and/or contract-based software
+            engineering work. If you have any opportunities for me, or if you
+            just want to reach out you can find me at the links below, or you an
+            shoot me a message!
           </p>
           <ContactList>
             <ContactItem>

@@ -120,16 +120,19 @@ const ProjectCard = ({ data: project }) => {
         <CardFooter>
           <TechList>
             {/* List of the tech that I used for this project */}
-            {project.frontmatter.tech.map((tech, i) => (
-              <li key={i}>{tech}</li>
-            ))}
+            {project.frontmatter.tech &&
+              project.frontmatter.tech.map((tech, i) => (
+                <li key={i}>{tech}</li>
+              ))}
           </TechList>
 
           {/* A link to the github repo for this project */}
           <GithubIcon>
-            <a href={project.frontmatter.githubLink}>
-              <img src={githubIcon} alt="Icon-link to github" />
-            </a>
+            {project.frontmatter.githubLink && (
+              <a href={project.frontmatter.githubLink}>
+                <img src={githubIcon} alt="Icon-link to github" />
+              </a>
+            )}
           </GithubIcon>
         </CardFooter>
       </CardWrapper>
