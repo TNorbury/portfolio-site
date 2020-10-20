@@ -1,7 +1,6 @@
 ---
-title: Album Rater
-projectLink: https://github.com/TNorbury/Album-Rater-2
-githubLink: https://github.com/TNorbury/Album-Rater-2
+title: Music Note
+projectLink: https://www.music-note.app/
 tech:
   - Flutter
   - NoSQL
