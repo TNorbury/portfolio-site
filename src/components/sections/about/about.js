@@ -120,7 +120,9 @@ const About = () => {
                 Tools & Frameworks
                 <ul>
                   <Skill>Flutter</Skill>
-                  <Skill>GatsbyJs</Skill>
+                  <Skill>React.js</Skill>
+                  <Skill>Gatsby.js</Skill>
+                  <Skill>Vue.js</Skill>
                   <Skill>Node.js</Skill>
                   <Skill>QT</Skill>
                 </ul>
