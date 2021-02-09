@@ -94,10 +94,8 @@ const Contact = () => {
       <ContactBody>
         <ContactInfo>
           <p>
-            I'm currently open to both full-time and/or contract-based software
-            engineering work. If you have any opportunities for me, or if you
-            just want to reach out you can find me at the links below, or you an
-            shoot me a message!
+            I'm not currently seeking any sort of work right now. But feel free
+            to reach out if you wanna chat!
           </p>
           <ContactList>
             <ContactItem>
